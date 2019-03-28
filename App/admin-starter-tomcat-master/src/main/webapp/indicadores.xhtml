@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="#{layoutMB.template}">
+
+    <ui:define name="head-end">
+        <ui:param name="renderBreadCrumb" value="false"/>
+    </ui:define>
+
+    <ui:define name="title">
+        <h2 class="align-left"><b>Dashboards</b></h2>
+        <h4>
+            Visualizar informações gráficas a partir dos dados de atendimento
+        </h4>
+        <p:separator class="align-center" style="width:500px; height: 20px"/>
+        
+        <div class="ui-g-6 ui-sm-12" style="padding-left: 0" >
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="line" model="#{chartView.areaModel}" style="height:300px" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-right: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="bar" model="#{chartView.barModel}" style="height:300px" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-left: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="bubble" model="#{chartView.bubbleModel2}" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-right: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="donut" model="#{chartView.donutModel1}" style="width:400px;height:300px" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-left: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="line" model="#{chartView.lineModel2}" style="height:300px;" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-right: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="pie" model="#{chartView.pieModel1}" style="width:400px;height:300px" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-left: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="metergauge" model="#{chartView.meterGaugeModel2}" style="width:400px;height:250px" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-right: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="ohlc" model="#{chartView.ohlcModel}" style="width:400px;height:300px" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-left: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="line" model="#{chartView.animatedModel1}" style="width:400px;" responsive="true"/>
+            </p:panel>
+        </div>
+        <div class="ui-g-6 ui-sm-12" style="padding-right: 0">
+            <p:panel header="PanelMenu" styleClass="card no-border" style="height: 400px" class="align-center">
+                <p:chart type="bar" model="#{chartView.combinedModel}" style="height:300px" responsive="true"/>
+            </p:panel>
+        </div>
+        
+        
+        
+    </ui:define>
+
+</ui:composition>

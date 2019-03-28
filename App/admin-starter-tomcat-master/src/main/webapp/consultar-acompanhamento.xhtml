@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:adm="http://github.com/adminfaces"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" 
+                xmlns:p="http://primefaces.org/ui"
+                template="#{layoutMB.template}">
+    
+    <ui:define name="metadata">
+        <ui:param name="title" value="Consultar Acompanhamento"/> <!-- Automatic create breadCrumb and page title when param 'title' is provided. --> 
+        <style type="text/css">
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+
+        </style>
+    </ui:define>
+    
+    <ui:define name="description">
+        Continuar com o preenchimento das informações nutricionais
+    </ui:define>
+
+    <ui:define name="body">
+        <style type="text/css">
+            .ui-g div {
+                background-color: #ededed;
+                text-align: center;
+                border: 1px solid #fafafa;
+            }
+
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+
+            .ui-button-text-only .ui-button-text {
+                padding: 0.3em 0.4em;
+            }
+
+            .ui-selectcheckboxmenu-panel .ui-selectcheckboxmenu-header .ui-chkbox {
+                visibility: hidden;
+            }
+
+            .ui-filter-column .ui-column-customfilter .custom-filter {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .year-spinner input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        </style>
+        
+        
+        
+        <h:form>
+            <div class="box box-primary">
+                <p:dataTable var="car" value="#{dtFilterView.cars}" widgetVar="carsTable"
+                             emptyMessage="Nenhum resultado encontrado" filteredValue="#{dtFilterView.filteredCars}">
+
+                    <f:facet name="header">
+                        <p:outputPanel>
+                            <h:outputText value="Pesquise em todos os filtros: " />
+                            <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px" placeholder="Digite uma palavra "/>
+                        </p:outputPanel>
+                    </f:facet>
+
+                    <p:column filterBy="#{car.id}" headerText="Prontuário" filterMatchMode="contains">
+                        <h:outputText value="#{car.id}" />
+                    </p:column>
+
+                    <p:column filterBy="#{car.year}" headerText="Nome" filterMatchMode="lte">
+                        <h:outputText value="#{car.year}" />
+                    </p:column>
+
+                    <p:column filterBy="#{car.brand}" headerText="Clínica" filterMatchMode="exact">
+                        <h:outputText value="#{car.brand}" />
+                    </p:column>
+
+                    <p:column filterBy="#{car.color}" headerText="Leito" filterMatchMode="in">
+                        <h:outputText value="#{car.color}" />
+                    </p:column>
+
+                    <p:column filterBy="#{car.sold}" headerText="Idade" filterMatchMode="equals">
+                        <h:outputText value="#{car.sold}" />
+                    </p:column>
+
+                    <p:column filterBy="#{car.price}" headerText="Sexo" filterMatchMode="exact">
+                        <h:outputText value="#{car.price}"/>
+                    </p:column>
+
+                    <p:column filterBy="#{car.id}" headerText="Data de Nascimento" filterMatchMode="contains">
+                        <h:outputText value="#{car.id}" />
+                    </p:column>
+
+                    <p:column filterBy="#{car.id}" headerText="Data de Admissão" filterMatchMode="contains">
+                        <h:outputText value="#{car.id}" />
+                    </p:column>
+
+                    <p:column filterBy="#{car.id}" headerText="Data de Alta" filterMatchMode="contains">
+                        <h:outputText value="#{car.id}" />
+                    </p:column>
+                    
+                    <p:separator/>
+                </p:dataTable>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

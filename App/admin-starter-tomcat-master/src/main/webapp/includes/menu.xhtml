@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" 
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ul class="sidebar-menu tree" data-widget="tree">
+        <li>
+            <p:link outcome="/index.jsf" onclick="clearBreadCrumbs()">
+                <i class="fa fa-home"></i>
+                <span>Painel Inicial</span>
+            </p:link>
+        </li>
+        <li class="header">
+            Pacientes
+        </li>
+        <li>
+            <p:link outcome="/consultar-acompanhamento.jsf">
+                <i class="fa fa-users"></i>
+                <span>Consultar Acompanhamento</span>
+            </p:link>
+        </li>
+        <li class="header">
+            Insumos
+        </li>
+        <li>
+            <p:link outcome="/insumos-list.jsf">
+                <i class="fa fa-forumbee"></i>
+                <span>Gerenciar Suplementos/Dietas</span>
+            </p:link>
+        </li>
+        <li class="header">
+            Indicadores
+        </li>
+        <li>
+            <p:link outcome="/indicadores.jsf">
+                <i class="fa fa-pie-chart"></i>
+                <span>Visualizar Dashboards</span>
+            </p:link>
+        </li>
+
+    </ul>
+
+</ui:composition>
